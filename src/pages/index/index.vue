@@ -11,7 +11,6 @@
 </route>
 
 <script lang="ts" setup>
-import { Button as VanButton } from 'vant'
 import PLATFORM from '@/utils/platform'
 
 defineOptions({
@@ -70,9 +69,9 @@ function goDemo() {
       最好用的 uniapp 开发模板
     </view>
 
-    <van-button type="primary" plain block class="mb-4!" @click="goDemo">
+    <wd-button type="primary" plain block custom-class="mb-4!" @click="goDemo">
       go form-create-demo
-    </van-button>
+    </wd-button>
 
     <view class="m-auto mb-2 max-w-100 text-justify indent text-4">
       {{ description }}
