@@ -47,6 +47,7 @@ image {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -56,6 +57,7 @@ image {
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 </style>
