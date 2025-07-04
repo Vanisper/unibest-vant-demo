@@ -9,6 +9,12 @@ function demoHandle(): void {
     duration: 2000,
   })
 }
+
+function demoStepsHandle(): void {
+  uni.navigateTo({
+    url: '/pages-sub/form-create-demo/steps-form',
+  })
+}
 </script>
 
 <template>
@@ -21,9 +27,14 @@ function demoHandle(): void {
       基于 Vant 组件库的表单构建器
     </view>
 
-    <van-button type="primary" round plain size="small" class="demo-btn" @click="demoHandle">
-      查看示例说明
-    </van-button>
+    <view class="flex flex-col gap-2">
+      <van-button type="primary" round plain size="small" class="demo-btn" @click="demoHandle">
+        查看示例说明
+      </van-button>
+      <van-button type="danger" round plain size="small" @click="demoStepsHandle">
+        查看步骤表单
+      </van-button>
+    </view>
   </view>
 </template>
 

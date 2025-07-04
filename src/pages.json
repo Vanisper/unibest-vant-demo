@@ -88,6 +88,14 @@
             "navigationStyle": "default",
             "navigationBarTitleText": "FormCreate 完整示例"
           }
+        },
+        {
+          "path": "form-create-demo/steps-form",
+          "type": "page",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "步骤表单示例"
+          }
         }
       ]
     }

@@ -86,38 +86,4 @@ const formApi = ref<Api | null>(null)
     border-radius: 44rpx;
   }
 }
-
-// 覆盖 form-create 样式
-:deep(.fc-form) {
-  .van-cell {
-    padding: 24rpx 0;
-
-    .van-cell__title {
-      font-weight: 500;
-      color: #333;
-    }
-  }
-
-  .van-field__label {
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 12rpx;
-  }
-}
-
-// 覆盖 van-tabs 样式
-:deep(.van-tabs) {
-  .van-tabs__nav {
-    background: white;
-    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
-  }
-
-  .van-tab {
-    font-weight: 500;
-  }
-
-  .van-tabs__content {
-    padding: 0;
-  }
-}
 </style>
