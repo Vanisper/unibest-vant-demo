@@ -69,5 +69,27 @@
       }
     }
   ],
-  "subPackages": []
+  "subPackages": [
+    {
+      "root": "pages-sub",
+      "pages": [
+        {
+          "path": "demo/index",
+          "type": "page",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "分包页面 标题"
+          }
+        },
+        {
+          "path": "form-create-demo/index",
+          "type": "page",
+          "style": {
+            "navigationStyle": "default",
+            "navigationBarTitleText": "FormCreate"
+          }
+        }
+      ]
+    }
+  ]
 }
