@@ -1,17 +1,18 @@
 import type { Rule } from '@form-create/vant'
 import type { StepData } from '../config'
 import { showNotify } from 'vant'
-import { handleReset as handleBaseReset, handleSubmit as handleBaseSubmit, stepsData } from '../config'
+import { handleReset as handleBaseReset, handleSubmit as handleBaseSubmit } from '../config'
 
 /**
  * 多步表单组合式函数
  */
-export function useStepsForm() {
+export function useStepsForm(initSteps: StepData[]) {
   const currentStep = ref<number>(0)
+  const stepsData = initSteps.slice()
 
-  // 下一步
-  async function nextStep(validateCurrentStep: (currentStep: StepData, currIndex: number) => Promise<boolean>): Promise<void> {
-    const isValid = await validateCurrentStep(stepsData[currentStep.value], currentStep.value)
+  /** 下一步 */
+  async function nextStep(validator: (currentStep: StepData, currIndex: number) => Promise<boolean>): Promise<void> {
+    const isValid = await validator(stepsData[currentStep.value], currentStep.value)
     if (!isValid)
       return
 

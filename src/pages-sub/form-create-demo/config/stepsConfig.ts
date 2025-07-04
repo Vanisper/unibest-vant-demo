@@ -23,7 +23,7 @@ export interface StepData<T extends Record<string, any> = Record<string, any>> {
 }
 
 // 步骤信息配置
-export const stepsData: StepData[] = [
+export const stepsInitData: StepData[] = [
   { text: '基本信息', desc: '填写个人基本信息' },
   { text: '详细信息', desc: '补充详细资料' },
   { text: '确认提交', desc: '检查并提交信息' },
@@ -35,7 +35,7 @@ export const step1Rules: Rule[] = [
     type: 'input',
     field: 'realName',
     title: '真实姓名',
-    value: '',
+    value: '张三',
     props: {
       placeholder: '请输入真实姓名',
       clearable: true,
@@ -48,7 +48,7 @@ export const step1Rules: Rule[] = [
     type: 'radio',
     field: 'gender',
     title: '性别',
-    value: '',
+    value: 'male',
     options: [
       { label: '男', value: 'male' },
       { label: '女', value: 'female' },
@@ -61,7 +61,7 @@ export const step1Rules: Rule[] = [
     type: 'datePicker',
     field: 'birthday',
     title: '出生日期',
-    value: '',
+    value: '2000-01-01',
     props: {
       placeholder: '请选择出生日期',
     },
@@ -73,7 +73,7 @@ export const step1Rules: Rule[] = [
     type: 'input',
     field: 'phone',
     title: '手机号码',
-    value: '',
+    value: '13800138000',
     props: {
       placeholder: '请输入手机号码',
       clearable: true,
@@ -91,7 +91,7 @@ export const step2Rules: Rule[] = [
     type: 'select',
     field: 'education',
     title: '学历',
-    value: '',
+    value: 'bachelor',
     options: [
       { text: '高中及以下', value: 'high_school' },
       { text: '大专', value: 'college' },
@@ -110,7 +110,7 @@ export const step2Rules: Rule[] = [
     type: 'cascader',
     field: 'address',
     title: '居住地址',
-    value: '',
+    value: 'shenzhen',
     options: [
       {
         text: '广东省',
@@ -142,7 +142,7 @@ export const step2Rules: Rule[] = [
     type: 'checkbox',
     field: 'skills',
     title: '技能特长',
-    value: [],
+    value: ['frontend'],
     options: [
       { label: '前端开发', value: 'frontend' },
       { label: '后端开发', value: 'backend' },

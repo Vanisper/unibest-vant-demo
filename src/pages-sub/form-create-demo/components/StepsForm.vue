@@ -5,6 +5,7 @@ import {
   step1Rules,
   step2Rules,
   stepsFormOptions,
+  stepsInitData,
 } from '../config'
 
 const {
@@ -16,13 +17,19 @@ const {
   handleReset,
   handleSubmit,
   formatDisplayData,
-} = useStepsForm()
+} = useStepsForm(stepsInitData) // 初始化 steps 数据
 
 const formOptions = stepsFormOptions
 
+// 注册对应的上面的某些步骤的 form-create 规则
+// 这里的步骤索引与 stepsData 的索引对应
 registerSteps(0, step1Rules)
 registerSteps(1, step2Rules)
 
+/**
+ * 进入下一个步骤
+ * @description 验证当前步骤表单数据是否有效，若有效则进入下一步
+ */
 async function nextStep() {
   await nextStepFn(async (currentStep, index) => {
     return new Promise((resolve) => {
