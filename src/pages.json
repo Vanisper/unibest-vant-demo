@@ -86,7 +86,7 @@
           "type": "page",
           "style": {
             "navigationStyle": "default",
-            "navigationBarTitleText": "FormCreate"
+            "navigationBarTitleText": "FormCreate 完整示例"
           }
         }
       ]
