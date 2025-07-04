@@ -4,3 +4,10 @@ packages:
 
 patchedDependencies:
   '@dcloudio/uni-h5': patches/@dcloudio__uni-h5.patch
+
+onlyBuiltDependencies:
+  - '@uni-helper/unocss-preset-uni'
+  - core-js
+  - es5-ext
+  - esbuild
+  - vue-demi

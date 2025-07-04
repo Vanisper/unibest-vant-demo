@@ -6,6 +6,7 @@ import { prototypeInterceptor, requestInterceptor, routeInterceptor } from './in
 import store from './store'
 import '@/style/index.scss'
 import 'virtual:uno.css'
+import 'vant/lib/index.css'
 
 export function createApp() {
   const app = createSSRApp(App)

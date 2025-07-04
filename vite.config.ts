@@ -19,7 +19,7 @@ import Optimization from '@uni-ku/bundle-optimizer'
 import dayjs from 'dayjs'
 import { visualizer } from 'rollup-plugin-visualizer'
 import AutoImport from 'unplugin-auto-import/vite'
-import { defineConfig, loadEnv } from 'vite'
+import { loadEnv } from 'vite'
 import ViteRestart from 'vite-plugin-restart'
 import updatePackageJson from './vite-plugins/updatePackageJson'
 
