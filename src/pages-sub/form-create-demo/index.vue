@@ -25,7 +25,11 @@ const formApi = ref<Api | null>(null)
 <template>
   <view class="form-create-demo">
     <DemoHeader />
-    <van-tabs v-model:active="activeTab" class="demo-tabs">
+    <van-tabs
+      v-model:active="activeTab" class="demo-tabs"
+      :offset-top="44"
+      animated swipeable sticky
+    >
       <!-- 表单展示 -->
       <van-tab title="表单展示" class="tab-content">
         <view class="form-container">
