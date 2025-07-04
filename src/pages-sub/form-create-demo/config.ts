@@ -1,12 +1,57 @@
-import type { Rule } from '@form-create/vant'
+import type { Api, FormCreateProps, Rule } from '@form-create/vant'
+import { showNotify, showSuccessToast } from 'vant'
+
+// 表单提交
+export async function handleSubmit(fApi: Api): Promise<void> {
+  if (!fApi) {
+    console.warn('FormCreate API 未初始化')
+    return
+  }
+
+  try {
+    await fApi.validate()
+    showSuccessToast('表单验证通过！')
+  }
+  catch (errors) {
+    console.warn('表单验证失败：', errors)
+    showNotify({
+      message: '表单验证失败，请检查输入',
+      type: 'danger',
+      position: 'top',
+    })
+  }
+}
+
+// 重置表单
+export function handleReset(fApi: Api) {
+  if (!fApi) {
+    console.warn('FormCreate API 未初始化')
+    return
+  }
+  fApi.resetFields()
+
+  showNotify({
+    message: '表单已重置',
+    type: 'success',
+    position: 'top',
+  })
+}
 
 /**
  * 表单配置选项
  * @link https://tdesign.tencent.com/vue-next/components/form?tab=api
  */
-export const formOptions = {
+export const formOptions: FormCreateProps['option'] = {
   form: {
     labelAlign: 'left',
+  },
+  submitBtn: {
+    show: true,
+    click: handleSubmit,
+  },
+  resetBtn: {
+    show: true,
+    click: handleReset,
   },
 }
 
@@ -68,15 +113,16 @@ export const defaultFormRules: Rule[] = [
     field: 'city',
     title: '所在城市',
     value: 'beijing',
-    options: [
-      { label: '北京', value: 'beijing' },
-      { label: '上海', value: 'shanghai' },
-      { label: '广州', value: 'guangzhou' },
-      { label: '深圳', value: 'shenzhen' },
-      { label: '杭州', value: 'hangzhou' },
-    ],
     props: {
+      title: '请选择城市',
       placeholder: '请选择城市',
+      options: [
+        { text: '北京', value: 'beijing' },
+        { text: '上海', value: 'shanghai' },
+        { text: '广州', value: 'guangzhou' },
+        { text: '深圳', value: 'shenzhen' },
+        { text: '杭州', value: 'hangzhou' },
+      ],
     },
   },
   {

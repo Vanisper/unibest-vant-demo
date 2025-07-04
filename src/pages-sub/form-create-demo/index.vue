@@ -8,22 +8,18 @@
 </route>
 
 <script lang="ts" setup>
+import type { Api } from '@form-create/vant'
+import type { FormData } from './types'
 import FormCreate from '@form-create/vant'
 import ConfigViewer from './components/ConfigViewer.vue'
 import DataViewer from './components/DataViewer.vue'
 import DemoHeader from './components/DemoHeader.vue'
-import { useFormCreate } from './composables'
 import { defaultFormRules, formOptions } from './config'
 
 const activeTab = ref<number>(0)
 const formRules = ref(defaultFormRules)
-
-const {
-  formData,
-  formApi,
-  handleSubmit,
-  handleReset,
-} = useFormCreate()
+const formData = ref<FormData>({})
+const formApi = ref<Api | null>(null)
 </script>
 
 <template>
@@ -39,28 +35,6 @@ const {
             :rule="formRules"
             :option="formOptions"
           />
-
-          <!-- 操作按钮 -->
-          <view class="form-actions">
-            <van-button
-              type="primary"
-              size="large"
-              block
-              class="action-btn"
-              @click="handleSubmit"
-            >
-              提交表单
-            </van-button>
-            <van-button
-              type="default"
-              size="large"
-              block
-              class="action-btn"
-              @click="handleReset"
-            >
-              重置表单
-            </van-button>
-          </view>
         </view>
       </van-tab>
 
